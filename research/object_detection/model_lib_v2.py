@@ -711,7 +711,7 @@ def train_loop(
 
                         loss_val = logged_dict_np['Loss/total_loss']
                         # if lower than score, terminate
-                        if loss_val < LOSS_UPPER_BOUND and loss_val > LOSS_LOWER_BOUND:
+                        if loss_val < float(LOSS_UPPER_BOUND) and loss_val > float(LOSS_LOWER_BOUND):
                             tf.logging.info(
                                 'Step {} per-step time {:.3f}s'.format(
                                     global_step.value(), time_taken / num_steps_per_iteration))
